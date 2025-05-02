@@ -1,16 +1,16 @@
 const mongoose = require('mongoose')
-const schema =mongoose.Schema
+const schema = mongoose.Schema//mongoose is a object which contain schema class
 
 const blogSchema = new schema({
     title :{
         type : String,
-        unique : true
+    
     },
     subtitle :{
         type : String
     },
     description :{
-        type : Text
+        type : String
     },
     image :{
         type : String
@@ -18,5 +18,6 @@ const blogSchema = new schema({
 
 })
 
-const blog = mongoose.model('blog',blogschema)
+const blog = mongoose.model('blog',blogSchema)//'model' is the name of table or name of model which store 
+                                               //blogSchema
 module.exports = blog
