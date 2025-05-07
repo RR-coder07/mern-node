@@ -47,7 +47,7 @@ console.log(req.body)
   }
 console.log(req.file)
 
-const filename ="http://localhost:3000/" + req.file.filename
+const filename ="https://mern-node-uezz.onrender.com" + req.file.filename
 
 // blog bhana folder ma halnuparama create() method use huncha // 
      blog.create({
@@ -128,7 +128,7 @@ app.patch('/blog/:id' ,upload.single('image') , async(req,res) =>{
     const {title,subtitle,description} = req.body
     let filename;
  if(req.file){
-    filename = "http://localhost:3000/" + req.file.filename
+    filename = "https://mern-node-uezz.onrender.com/" + req.file.filename
     const id = req.params.id
     const Blog = await blog.findById(id)
     const imageName = Blog.image
