@@ -22,7 +22,7 @@ connectdatabase()
 //fix of cors error
 const cors =require("cors")
 app.use(cors({
-    origin:["https://localhost:5173/","https://myfirstproject-chi-snowy.vercel.app"]
+    origin:["http://localhost:5173","https://myfirstproject-chi-snowy.vercel.app"]
 }))
 app.get("/",(req,res)=>{
    res.status(200).json(  {
