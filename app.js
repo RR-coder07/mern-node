@@ -22,7 +22,7 @@ connectdatabase()
 //fix of cors error
 const cors =require("cors")
 app.use(cors({
-    origin:"https://myfirstproject-chi-snowy.vercel.app"
+    origin:["https://localhost:5173/","https://myfirstproject-chi-snowy.vercel.app"]
 }))
 app.get("/",(req,res)=>{
    res.status(200).json(  {
@@ -47,7 +47,7 @@ console.log(req.body)
   }
 console.log(req.file)
 
-const filename ="https:localhost:3000/" + req.file.filename
+const filename ="https://localhost:4000/" + req.file.filename
 
 // blog bhana folder ma halnuparama create() method use huncha // 
      blog.create({
@@ -128,7 +128,7 @@ app.patch('/blog/:id' ,upload.single('image') , async(req,res) =>{
     const {title,subtitle,description} = req.body
     let filename;
  if(req.file){
-    filename = "https://localhost:3000/" + req.file.filename
+    filename = "https://localhost:4000/" + req.file.filename
     const id = req.params.id
     const Blog = await blog.findById(id)
     const imageName = Blog.image
