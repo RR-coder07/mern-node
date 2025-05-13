@@ -49,7 +49,7 @@ console.log(req.body)
   }
 console.log(req.file)
 
-const filename ="https://localhost:4000/" + req.file.filename
+const filename ="http://localhost:4000/" + req.file.filename
 
 // blog bhana folder ma halnuparama create() method use huncha // 
      blog.create({
@@ -130,7 +130,7 @@ app.patch('/blog/:id' ,upload.single('image') , async(req,res) =>{
     const {title,subtitle,description} = req.body
     let filename;
  if(req.file){
-    filename = "https://localhost:4000/" + req.file.filename
+    filename = "http://localhost:4000/" + req.file.filename
     const id = req.params.id
     const Blog = await blog.findById(id)
     const imageName = Blog.image
