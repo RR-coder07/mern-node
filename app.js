@@ -48,8 +48,13 @@ console.log(req.body)
     })
   }
 console.log(req.file)
-
-const filename ="https://mern-node-uezz.onrender.com" + req.file.filename
+let filename;
+if(filename){
+    
+ filename ="https://mern-node-uezz.onrender.com/" + req.file.filename
+}else{
+    filename="https://www.bing.com/images/search?q=image&id=232CBE49180CF0C28569E4DAF6BC798B0D279B2D&FORM=IACFIR"
+}
 
 // blog bhana folder ma halnuparama create() method use huncha // 
      blog.create({
@@ -130,7 +135,7 @@ app.patch('/blog/:id' ,upload.single('image') , async(req,res) =>{
     const {title,subtitle,description} = req.body
     let filename;
  if(req.file){
-    filename = "https://mern-node-uezz.onrender.com" + req.file.filename
+    filename = "https://mern-node-uezz.onrender.com/" + req.file.filename
     const id = req.params.id
     const Blog = await blog.findById(id)
     const imageName = Blog.image
