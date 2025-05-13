@@ -53,7 +53,7 @@ if(filename){
     
  filename ="https://mern-node-uezz.onrender.com/" + req.file.filename
 }else{
-    filename="https://www.bing.com/images/search?q=image&id=232CBE49180CF0C28569E4DAF6BC798B0D279B2D&FORM=IACFIR"
+    filename="https://mern-node-uezz.onrender.com/haha.gif"
 }
 
 // blog bhana folder ma halnuparama create() method use huncha // 
