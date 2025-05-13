@@ -19,10 +19,12 @@ const app = express();
  app.use(express.json());
 connectdatabase()
 
+
 //fix of cors error
 const cors =require("cors")
+const allowedorigin =["http://localhost:5173","https://myfirstproject-chi-snowy.vercel.app"]
 app.use(cors({
-    origin:["http://localhost:5173","https://myfirstproject-chi-snowy.vercel.app"]
+    origin:allowedorigin
 }))
 app.get("/",(req,res)=>{
    res.status(200).json(  {
